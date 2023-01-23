@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        td {
+            background: antiquewhite;
+            color: darkmagenta;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your orders: </h1>
+
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+        </tr>
+
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.getModel()}"></td>
+            <td th:text="${car.getYear()}"></td>
+            <td th:text="${car.getColor()}"></td>
+        </tr>
+    </table>
+
+    <h1>More cars? </h1>
+    <a th:href="@{/car/new}">Click here</a>
+
+</body>
+</html>
